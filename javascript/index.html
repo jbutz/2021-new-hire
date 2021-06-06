@@ -1,0 +1,63 @@
+<!--
+
+    DO NOT EDIT ME, LOOK IN script.js
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Exercise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col offset-2 col-8">
+                <p>Create a class to represent an individual bank account. In order to create an instance of this class
+                    you must provide:</p>
+                <ul>
+                    <li>The account owner's name</li>
+                    <li>The account's starting balance</li>
+                    <li>The account's currency. Valid values are <code>ABC</code> or <code>XYZ</code></li>
+                </ul>
+                <p>The bank account class must support the following operations:</p>
+                <ul>
+                    <li>Deposits, accepting a positive number to add to the account balance</li>
+                    <li>Withdrawals, accepting a positive number to subtract from the account balance</li>
+                    <li>Current exchanges, special withdrawals to a different currency</li>
+                </ul>
+                <p>Make all of your changes in the <code>script.js</code> file. Heed the comments at the top of the
+                    file. A function has already been created that calls an API to perform the currency conversions.</p>
+                <p>The function either returns an object with <code>from</code>, <code>to</code>, and <code>rate</code>
+                    properties, or an object with only an <code>error</code> property.</p>
+                <p>Once you have your class created, create a new instance of the class with an initial balance of
+                    <code>100 ABC</code>. Then deposit <code>350 ABC</code>. Then perform a currency exchange to
+                    <code>XYZ</code> and return that value from the <code>run()</code> function.</p>
+            </div>
+            <div class="col offset-2 col-8 text-center">
+                <button class="btn btn-primary" id="runButton">Run</button>
+                <button class="btn btn-secondary" id="clearButton">Clear</button>
+            </div>
+            <div class="col offset-2 col-8">
+                <pre class="bg-light mt-3 text-left" style="min-height: 200px;" id="output"></pre>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('#runButton').addEventListener('click', () => {
+            run().then((result) => {
+                document.querySelector('#output').innerHTML = JSON.stringify(result, null, 2);
+            });
+        });
+        document.querySelector('#clearButton').addEventListener('click', () => {
+            document.querySelector('#output').innerHTML = '';
+        });
+    </script>
+</body>
+
+</html>
