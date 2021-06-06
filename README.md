@@ -1,10 +1,10 @@
 # 2021 New Hire Exercises
 
-## JavaScript/TypeScript
+## JavaScript & TypeScript Class
 
 - [JavaScript exercise](./javascript)
 - [TypeScript exercise](./typescript)
 
-## Node/Express
+## Node & Express Class
 
 _TBD_
