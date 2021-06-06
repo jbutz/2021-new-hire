@@ -1,8 +1,13 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import React, { useEffect } from "react";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const [origin, setOrigin] = React.useState("");
+  useEffect(() => {
+    setOrigin(window.location.origin);
+  }, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -12,25 +17,29 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Mock API
-        </h1>
+        <h1 className={styles.title}>Mock API</h1>
 
         <div className={styles.grid}>
           <div className={styles.card}>
             <h2>Currency Exchange</h2>
-            <p>Return exchange rates between the fictional currencies <code>ABC</code> and <code>XYZ</code></p>
+            <p>
+              Return exchange rates between the fictional currencies{" "}
+              <code>ABC</code> and <code>XYZ</code>
+            </p>
             <pre>
-              GET {window?.location?.origin || ''}/api/exchange/{'{from}'}/{'{to}'}
+              GET {origin}/api/exchange/{"{from}"}/{"{to}"}
               <br />
-              {JSON.stringify({
-                from: "from",
-                to: "to",
-                rate: 1.5
-              }, null, 2)}
+              {JSON.stringify(
+                {
+                  from: "from",
+                  to: "to",
+                  rate: 1.5,
+                },
+                null,
+                2
+              )}
             </pre>
           </div>
-
         </div>
       </main>
 
@@ -40,12 +49,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
