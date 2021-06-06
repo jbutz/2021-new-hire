@@ -21,7 +21,7 @@ export default function Home() {
             <h2>Currency Exchange</h2>
             <p>Return exchange rates between the fictional currencies <code>ABC</code> and <code>XYZ</code></p>
             <pre>
-              GET {window.location.origin}/api/exchange/{'{from}'}/{'{to}'}
+              GET {window?.location?.origin || ''}/api/exchange/{'{from}'}/{'{to}'}
               <br />
               {JSON.stringify({
                 from: "from",
