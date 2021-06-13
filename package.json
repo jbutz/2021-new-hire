@@ -1,0 +1,7 @@
+{
+  "workspaces": [
+    "mock-api",
+    "node-express",
+    "node-express-tester"
+  ]
+}
