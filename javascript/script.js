@@ -8,6 +8,8 @@ async function run() {
 }
 
 async function getExchangeRate(from, to) {
-    const resp = await fetch(`https://a083f7a22-2021-new-hire.vercel.app/api/exchange/${from}/${to}`);
+    const resp = await fetch(
+        `https://a083f7a22-2021-new-hire.vercel.app/api/exchange/${from}/${to}`
+    );
     return await resp.json();
 }
